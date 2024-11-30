@@ -1,6 +1,6 @@
 class CustomException(Exception):
     def __init__(self, arg="") -> None:
-        self.arg = arg,
+        self.arg = arg
 
 
 class UnsavedScene(CustomException):

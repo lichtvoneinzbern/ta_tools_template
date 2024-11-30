@@ -1,14 +1,12 @@
+import logging
+
 import maya.cmds as cmds
 import maya.mel as mel
 
 CUSTOM_MENU_NAME = "CustomTools"
 
 
-def main() -> None:
-    create_menu()
-
-
-def create_menu() -> None:
+def create_menu(logger: logging.Logger) -> None:
     """
     メニューを作成
     """
@@ -21,6 +19,7 @@ def create_menu() -> None:
     cmds.menu(CUSTOM_MENU_NAME, l=CUSTOM_MENU_NAME.capitalize(), p=g_main_window, to=True)
 
     set_menu_general()
+    logger.info("=== General Menu Created ===")
 
     cmds.setParent('..', menu=True)
     cmds.setParent('..')

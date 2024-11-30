@@ -1,5 +1,5 @@
 from . import open_scene_path
 
 
-def execute():
+def execute() -> None:
     open_scene_path.execute()
